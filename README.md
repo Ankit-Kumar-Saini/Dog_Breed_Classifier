@@ -40,25 +40,25 @@ The `requirements folder` list all the libraries/dependencies required to run th
 
 
 ## Results<a name="results"></a>
+The step by step explanation of the project can be found at the post available [here](https://ankitsaini1729.medium.com/dog-breed-classifier-using-cnns-72c33ce891c6).
+
 `Some visualizations of the predictions made by the algorithm on test images`
 
-- Number of messages in each genre
-![alt text](https://github.com/Ankit-Kumar-Saini/Disaster-Response-NLP-Pipeline/blob/main/sample%20images/message_genre.PNG) 
+- Image of German Shepherd
+![alt text](https://github.com/Ankit-Kumar-Saini/Dog_Breed_Classifier/blob/main/results/dog.PNG) 
 
-- Number of messages in each category
-![alt text](https://github.com/Ankit-Kumar-Saini/Disaster-Response-NLP-Pipeline/blob/main/sample%20images/categories.PNG) 
+- Image of Leonardo
+![alt text](https://github.com/Ankit-Kumar-Saini/Dog_Breed_Classifier/blob/main/results/human_1.PNG) 
 
-- Web app interface
-![alt text](https://github.com/Ankit-Kumar-Saini/Disaster-Response-NLP-Pipeline/blob/main/sample%20images/web%20app%20interface.PNG) 
+- Image of bridge
+![alt text](https://github.com/Ankit-Kumar-Saini/Dog_Breed_Classifier/blob/main/results/bridge.PNG) 
 
-- Directing message to web app for classification
-![alt text](https://github.com/Ankit-Kumar-Saini/Disaster-Response-NLP-Pipeline/blob/main/sample%20images/message.PNG) 
+- Image of Sanjay dutt
+![alt text](https://github.com/Ankit-Kumar-Saini/Dog_Breed_Classifier/blob/main/results/human_2.PNG) 
 
-- Classification result of above message
-![alt text](https://github.com/Ankit-Kumar-Saini/Disaster-Response-NLP-Pipeline/blob/main/sample%20images/message_classification.PNG) 
+- Image of Taj Mahal
+![alt text](https://github.com/Ankit-Kumar-Saini/Dog_Breed_Classifier/blob/main/results/taj_mahal.PNG) 
 
-- Statistics of word and character counts of messages in the training data
-![alt text](https://github.com/Ankit-Kumar-Saini/Disaster-Response-NLP-Pipeline/blob/main/sample%20images/stats.PNG) 
 
 ## Licensing, Authors, Acknowledgements<a name="licensing"></a>
 Must give credit to Udacity for the data and python 3 notebook.
