@@ -1,96 +1,68 @@
-[//]: # (Image References)
+# Dog Breed Classifier
+`The capstone project for Udacity’s Data Scientist Nanodegree Program`
 
-[image1]: ./images/sample_dog_output.png "Sample Output"
-[image2]: ./images/vgg16_model.png "VGG-16 Model Keras Layers"
-[image3]: ./images/vgg16_model_draw.png "VGG16 Model Figure"
+### Table of Contents
+1. [Project Overview](#overview)
+2. [Dependencies](#dependency)
+3. [Instructions to use the repository](#instructions)
+4. [File Descriptions](#files)
+5. [Results](#results)
+6. [Licensing, Authors, and Acknowledgements](#licensing)
 
 
-## Project Overview
+## Project Overview<a name="overview"></a>
+In this project, I have implemented an `end-to-end deep learning pipeline` that can be used **within a web or mobile app** to process real-world, user-supplied images. The pipeline will accept any user-supplied image as input and will predict whether a dog or human is present in the image. If a dog is detected in the image, it will provide an estimate of the dog’s breed. If a human is detected, it will provide an estimate of the dog breed that is most resembling. 
 
-Welcome to the Convolutional Neural Networks (CNN) project in the AI Nanodegree! In this project, you will learn how to build a pipeline that can be used within a web or mobile app to process real-world, user-supplied images.  Given an image of a dog, your algorithm will identify an estimate of the canine’s breed.  If supplied an image of a human, the code will identify the resembling dog breed.  
 
-![Sample Output][image1]
+## List of Dependencies<a name="dependency"></a>
+The `requirements folder` list all the libraries/dependencies required to run this project.
 
-Along with exploring state-of-the-art CNN models for classification, you will make important design decisions about the user experience for your app.  Our goal is that by completing this lab, you understand the challenges involved in piecing together a series of models designed to perform various tasks in a data processing pipeline.  Each model has its strengths and weaknesses, and engineering a real-world application often involves solving many problems without a perfect answer.  Your imperfect solution will nonetheless create a fun user experience!
 
-## Project Instructions
+## Instructions to use the repository<a name="instructions"></a>
+1. Clone this github repository.
+`git clone https://github.com/Ankit-Kumar-Saini/Dog_Breed_Classifier`
 
-### Instructions
+2. Download the [dog dataset](https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/dogImages.zip). Unzip the folder and prepare image label pairs for training the model.
 
-1. Clone the repository and navigate to the downloaded folder.
-```	
-git clone https://github.com/udacity/dog-project.git
-cd dog-project
-```
+3. Download the [human dataset](https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/lfw.zip). Unzip the folder and prepare images for the face detector model.
 
-2. Download the [dog dataset](https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/dogImages.zip).  Unzip the folder and place it in the repo, at location `path/to/dog-project/dogImages`. 
 
-3. Download the [human dataset](https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/lfw.zip).  Unzip the folder and place it in the repo, at location `path/to/dog-project/lfw`.  If you are using a Windows machine, you are encouraged to use [7zip](http://www.7-zip.org/) to extract the folder. 
+## File Descriptions <a name="files"></a>
+1. The `haarcascades folder` contains the pre-trained weights in the `xml file format` to use with the OpenCv face detector class that has been used in this project. 
 
-4. Donwload the [VGG-16 bottleneck features](https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/DogVGG16Data.npz) for the dog dataset.  Place it in the repo, at location `path/to/dog-project/bottleneck_features`.
+2. The `test_images folder` contains the sample images that are used to test the predictions of the final algorithm in this project.
 
-5. (Optional) __If you plan to install TensorFlow with GPU support on your local machine__, follow [the guide](https://www.tensorflow.org/install/) to install the necessary NVIDIA software on your system.  If you are using an EC2 GPU instance, you can skip this step.
+3. The `results folder` contains the results of the algorithm tested on the test images. These are used for the purpose of quick demonstration in the results section below.
 
-6. (Optional) **If you are running the project on your local machine (and not using AWS)**, create (and activate) a new environment.
+4. The `extract_bottleneck_features.py file` contains the code to use pre-trained imagenet models as **feature extractors** for transfer learning.
 
-	- __Linux__ (to install with __GPU support__, change `requirements/dog-linux.yml` to `requirements/dog-linux-gpu.yml`): 
-	```
-	conda env create -f requirements/dog-linux.yml
-	source activate dog-project
-	```  
-	- __Mac__ (to install with __GPU support__, change `requirements/dog-mac.yml` to `requirements/dog-mac-gpu.yml`): 
-	```
-	conda env create -f requirements/dog-mac.yml
-	source activate dog-project
-	```  
-	**NOTE:** Some Mac users may need to install a different version of OpenCV
-	```
-	conda install --channel https://conda.anaconda.org/menpo opencv3
-	```
-	- __Windows__ (to install with __GPU support__, change `requirements/dog-windows.yml` to `requirements/dog-windows-gpu.yml`):  
-	```
-	conda env create -f requirements/dog-windows.yml
-	activate dog-project
-	```
+5. The `dog_app.ipynb file` is the main file for this project. It is a jupyter notebook containing code of face detector, dog detector and dog breed classifier models. The final algorithm that uses all these three models to make predictions is also implemented in this notebook.
 
-7. (Optional) **If you are running the project on your local machine (and not using AWS)** and Step 6 throws errors, try this __alternative__ step to create your environment.
 
-	- __Linux__ or __Mac__ (to install with __GPU support__, change `requirements/requirements.txt` to `requirements/requirements-gpu.txt`): 
-	```
-	conda create --name dog-project python=3.5
-	source activate dog-project
-	pip install -r requirements/requirements.txt
-	```
-	**NOTE:** Some Mac users may need to install a different version of OpenCV
-	```
-	conda install --channel https://conda.anaconda.org/menpo opencv3
-	```
-	- __Windows__ (to install with __GPU support__, change `requirements/requirements.txt` to `requirements/requirements-gpu.txt`):  
-	```
-	conda create --name dog-project python=3.5
-	activate dog-project
-	pip install -r requirements/requirements.txt
-	```
-	
-8. (Optional) **If you are using AWS**, install Tensorflow.
-```
-sudo python3 -m pip install -r requirements/requirements-gpu.txt
-```
-	
-9. Switch [Keras backend](https://keras.io/backend/) to TensorFlow.
-	- __Linux__ or __Mac__: 
-		```
-		KERAS_BACKEND=tensorflow python -c "from keras import backend"
-		```
-	- __Windows__: 
-		```
-		set KERAS_BACKEND=tensorflow
-		python -c "from keras import backend"
-		```
+## Results<a name="results"></a>
+`Some visualizations of the predictions made by the algorithm on test images`
 
-10. (Optional) **If you are running the project on your local machine (and not using AWS)**, create an [IPython kernel](http://ipython.readthedocs.io/en/stable/install/kernel_install.html) for the `dog-project` environment. 
-```
-python -m ipykernel install --user --name dog-project --display-name "dog-project"
-```
+- Number of messages in each genre
+![alt text](https://github.com/Ankit-Kumar-Saini/Disaster-Response-NLP-Pipeline/blob/main/sample%20images/message_genre.PNG) 
+
+- Number of messages in each category
+![alt text](https://github.com/Ankit-Kumar-Saini/Disaster-Response-NLP-Pipeline/blob/main/sample%20images/categories.PNG) 
+
+- Web app interface
+![alt text](https://github.com/Ankit-Kumar-Saini/Disaster-Response-NLP-Pipeline/blob/main/sample%20images/web%20app%20interface.PNG) 
+
+- Directing message to web app for classification
+![alt text](https://github.com/Ankit-Kumar-Saini/Disaster-Response-NLP-Pipeline/blob/main/sample%20images/message.PNG) 
+
+- Classification result of above message
+![alt text](https://github.com/Ankit-Kumar-Saini/Disaster-Response-NLP-Pipeline/blob/main/sample%20images/message_classification.PNG) 
+
+- Statistics of word and character counts of messages in the training data
+![alt text](https://github.com/Ankit-Kumar-Saini/Disaster-Response-NLP-Pipeline/blob/main/sample%20images/stats.PNG) 
+
+## Licensing, Authors, Acknowledgements<a name="licensing"></a>
+Must give credit to Udacity for the data and python 3 notebook.
+
+
 
 
