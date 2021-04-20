@@ -44,19 +44,14 @@ The step by step explanation of the project can be found at the post available [
 
 `Some visualizations of the predictions made by the algorithm on test images`
 
-- Image of German Shepherd
 ![alt text](https://github.com/Ankit-Kumar-Saini/Dog_Breed_Classifier/blob/main/results/dog.PNG) 
 
-- Image of Leonardo
 ![alt text](https://github.com/Ankit-Kumar-Saini/Dog_Breed_Classifier/blob/main/results/human_1.PNG) 
 
-- Image of bridge
 ![alt text](https://github.com/Ankit-Kumar-Saini/Dog_Breed_Classifier/blob/main/results/bridge.PNG) 
 
-- Image of Sanjay dutt
 ![alt text](https://github.com/Ankit-Kumar-Saini/Dog_Breed_Classifier/blob/main/results/human_2.PNG) 
 
-- Image of Taj Mahal
 ![alt text](https://github.com/Ankit-Kumar-Saini/Dog_Breed_Classifier/blob/main/results/taj_mahal.PNG) 
 
 
