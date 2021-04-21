@@ -98,8 +98,11 @@ The step by step explanation of the project can be found at the post available [
 
 
 ## Conclusion<a name="conc"></a>
-This project serves as a good starting point to enter into the domain of deep learning. I have covered all the necessary steps including data exploration and visualization, choosing a performance metric for evaluating the model, data preprocessing for CNN models in Keras, building and training CNN models from scratch in Keras.
-The most interesting thing to note is the power of transfer learning to achieve good results with small computation. This fact is highlighted by comparing the performance of the pre-trained model with the CNN model build and trained from scratch.
+This project serves as a good starting point to enter into the domain of deep learning. Data exploration and visualizations are extremely important before training any Machine Learning model as it helps in choosing a suitable performance metric for evaluating the model. CNN models in Keras need image data in the form of a 4D tensor. All images need to be reshaped into the same shape for training the CNN models in batch. 
+
+Building CNN models from scratch is extremely simple in Keras. But training CNN models from scratch is computationally expensive and time-consuming. There are many pre-trained models available in Keras (trained on ImageNet dataset) that can be used for transfer learning.
+
+The most interesting thing to note is the power of transfer learning to achieve good results with small computation. It works well when the task is similar to the task on which the pre-trained model weights are optimized.
 
 
 ## Tips to improve the performance<a name="improve"></a>
