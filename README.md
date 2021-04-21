@@ -12,7 +12,7 @@
 8. [Dog Breed Classifier](#breed)
 9. [List of Dependencies](#dependency)
 10. [Instructions to use the repository](#instructions)
-11. [File Descriptions](#files)
+11. [File Descriptions](#desc)
 12. [Results](#results)
 13. [Conclusion](#conc)
 14. [Tips to improve the performance](#improve)
@@ -69,7 +69,7 @@ The `requirements folder` list all the libraries/dependencies required to run th
 3. Download the [human dataset](https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/lfw.zip). Unzip the folder and prepare images for the face detector model.
 
 
-## File Descriptions<a name="files"></a>
+## File Descriptions<a name="desc"></a>
 1. The `haarcascades folder` contains the pre-trained weights in the `xml file format` to use with the OpenCv face detector class that has been used in this project. 
 
 2. The `test_images folder` contains the sample images that are used to test the predictions of the final algorithm in this project.
