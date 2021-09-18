@@ -54,7 +54,8 @@ To detect the dogs in the images, I have used a pre-trained ResNet-50 model. Thi
 ## Dog Breed Classifier<a name="breed"></a>
 I build a simple CNN model from scratch and this model is neither too deep nor too shallow. It has five blocks of Conv2D layer followed by MaxPooling2D layer. I added a dropout layer after every two blocks of Conv2D and MaxPooing2D layers to avoid overfitting. This model didn't perform well and achieved only 5% accuracy on the test dataset.
 
-I used five different models with pre-trained weights to classify dog breeds. The models include VGG16, VGG19, InceptionV3, ResNet50, and Xception. Of all the models trained, the Xception model performed the best on the validation dataset. It achieved an accuracy of 80% on the validation data while the accuracy of other models was below 75% on the validation data.
+I used six different models with pre-trained weights to classify dog breeds. The models include VGG16, VGG19, InceptionV3, ResNet50, EfficientNetB4 and Xception. Of all the models trained, the EfficientNetB4 model performed the best on the validation dataset. It achieved an accuracy of 91% on the validation data. Trained model weights are stored in `EfficientNetB4_trained_weights` folder. The accuracy of other models was below 83% on the validation data. 
+
 
 ## List of Dependencies<a name="dependency"></a>
 The `requirements folder` list all the libraries/dependencies required to run this project.
